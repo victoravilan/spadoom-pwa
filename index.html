@@ -4,31 +4,26 @@
   <meta charset="utf-8" />
   <meta name="viewport" content="width=device-width,initial-scale=1,viewport-fit=cover,user-scalable=no" />
   <title>SpaDoom PWA</title>
-  <link rel="manifest" href="/manifest.webmanifest">
+
+  <link rel="manifest" href="./manifest.webmanifest">
   <meta name="theme-color" content="#111111">
-  <link rel="apple-touch-icon" href="/assets/icons/icon-192.png">
+  <link rel="apple-touch-icon" href="./assets/icons/icon-192.png">
   <meta name="apple-mobile-web-app-capable" content="yes">
   <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
-  <link rel="stylesheet" href="/style.css">
+
+  <link rel="stylesheet" href="./style.css">
   <script src="https://unpkg.com/three@0.160.0/build/three.min.js"></script>
 </head>
 <body>
   <canvas id="game"></canvas>
 
-  <!-- HUD -->
-  <div class="hud">
-    <div id="status">Objetos: 0 / 7</div>
-  </div>
+  <div class="hud"><div id="status">Objetos: 0 / 7</div></div>
 
-  <!-- Controles móviles -->
   <div class="controls">
-    <div id="stick" class="stick">
-      <div class="knob"></div>
-    </div>
+    <div id="stick" class="stick"><div class="knob"></div></div>
     <button id="fireBtn" class="fire">DISPARAR</button>
   </div>
 
-  <!-- Formulario final -->
   <div id="formPanel" class="panel hidden">
     <h2>Cupón -50%</h2>
     <input id="name" placeholder="Nombre" />
@@ -38,12 +33,12 @@
     <button id="redeem">Canjear</button>
   </div>
 
-  <script src="/joystick.js"></script>
-  <script src="/main.js"></script>
+  <!-- Cargar main.js como módulo (IMPORTANTE) -->
+  <script type="module" src="./main.js"></script>
+
   <script>
-    // Registrar service worker (PWA)
     if ('serviceWorker' in navigator) {
-      window.addEventListener('load', () => navigator.serviceWorker.register('/sw.js'));
+      window.addEventListener('load', () => navigator.serviceWorker.register('./sw.js'));
     }
   </script>
 </body>
