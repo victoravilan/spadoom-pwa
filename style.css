@@ -1,0 +1,17 @@
+:root { --ui: #0ff; --bg:#0a0a0a; --txt:#eaeaea; }
+html,body { margin:0; height:100%; background:#000; overflow:hidden; font-family: system-ui, Roboto, Arial; color:var(--txt); }
+#game { width:100vw; height:100vh; display:block; }
+
+.hud { position:fixed; top:12px; left:12px; font-weight:700; text-shadow:0 0 6px #000; }
+#status { padding:6px 10px; border:1px solid #333; background:rgba(0,0,0,.35); border-radius:8px; }
+
+.controls { position:fixed; inset:0; pointer-events:none; }
+.stick { position:absolute; left:16px; bottom:16px; width:160px; height:160px; border-radius:50%; background:rgba(255,255,255,.06); border:1px solid rgba(255,255,255,.12); pointer-events:auto; touch-action:none; }
+.stick .knob { position:absolute; left:50%; top:50%; width:80px; height:80px; margin:-40px; border-radius:50%; background:rgba(0,255,255,.35); border:1px solid rgba(0,255,255,.7); }
+
+.fire { position:absolute; right:16px; bottom:24px; width:120px; height:120px; border-radius:50%; background:rgba(255,80,80,.7); border:2px solid rgba(255,200,200,.9); color:#fff; font-weight:900; pointer-events:auto; touch-action:manipulation; }
+
+.panel { position:fixed; left:50%; top:50%; transform:translate(-50%,-50%); padding:16px; background:#111a; border:1px solid #444; border-radius:12px; backdrop-filter: blur(6px); width:min(90vw,420px); }
+.panel.hidden { display:none; }
+.panel input { width:100%; padding:10px; margin:8px 0; background:#111; color:#eee; border:1px solid #333; border-radius:8px; }
+.panel button { width:100%; padding:12px; margin-top:8px; background:#0b8; color:#fff; border:none; border-radius:10px; font-weight:800; }
